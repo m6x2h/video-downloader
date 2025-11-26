@@ -6,21 +6,24 @@ function download() {
         return;
     }
 
-    // إعلان ثالث يظهر بنسبة 25%
+    // إعلان احتمالي 25%
     if (Math.random() <= 0.25) {
-        window.open("https://example-ad.com", "_blank"); // ضع رابط الإعلان الحقيقي هنا
+        window.open("https://example-ad.com", "_blank");
     }
 
-    // تحويل للرابط حسب المنصة
+    // تيك توك
     if (url.includes("tiktok.com")) {
-        window.location.href = "https://ssstik.io/?url=" + encodeURIComponent(url);
-    } else if (url.includes("instagram.com")) {
-        window.location.href = "https://saveinsta.app/ar?url=" + encodeURIComponent(url);
-    } else if (url.includes("snapchat.com")) {
-        window.location.href = "https://snapinsta.app/en1/snapchat-downloader?url=" + encodeURIComponent(url);
-    } else if (url.includes("facebook.com") || url.includes("fb.watch")) {
-        window.location.href = "https://www.getfvid.com/downloader?url=" + encodeURIComponent(url);
-    } else {
-        alert("الرابط غير مدعوم");
+        window.location.href =
+            "https://ssstik.io/ar?url=" + encodeURIComponent(url);
+        return;
     }
+
+    // إنستقرام - المسار الصحيح للتنزيل في GetInSaver
+    if (url.includes("instagram.com") || url.includes("instagr.am")) {
+        window.location.href =
+            "https://getinsaver.com/instagram-download/?url=" + encodeURIComponent(url);
+        return;
+    }
+
+    alert("الرابط غير مدعوم حالياً");
 }
