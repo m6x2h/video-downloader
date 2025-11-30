@@ -6,11 +6,6 @@ function download() {
         return;
     }
 
-    // إعلان احتمالي 25%
-    if (Math.random() <= 0.25) {
-        window.open("https://example-ad.com", "_blank");
-    }
-
     // تيك توك
     if (url.includes("tiktok.com")) {
         window.location.href =
@@ -18,10 +13,31 @@ function download() {
         return;
     }
 
-    // إنستقرام - المسار الصحيح للتنزيل في GetInSaver
+    // إنستجرام
     if (url.includes("instagram.com") || url.includes("instagr.am")) {
         window.location.href =
             "https://getinsaver.com/instagram-download/?url=" + encodeURIComponent(url);
+        return;
+    }
+
+    // سناب شات
+    if (url.includes("snapchat.com")) {
+        window.location.href =
+            "https://snapinsta.app/en1/snapchat-downloader?url=" + encodeURIComponent(url);
+        return;
+    }
+
+    // فيسبوك
+    if (url.includes("facebook.com") || url.includes("fb.watch")) {
+        window.location.href =
+            "https://www.getfvid.com/downloader?url=" + encodeURIComponent(url);
+        return;
+    }
+
+    // يوتيوب
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+        window.location.href =
+            "https://ytdownloader.xyz/download?url=" + encodeURIComponent(url);
         return;
     }
 
